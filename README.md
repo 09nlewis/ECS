@@ -1,2 +1,0 @@
-# ECS
-Equestrian Competition Schedular 
