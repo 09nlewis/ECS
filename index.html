@@ -1,1 +1,81 @@
-Hello
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shop homepage</title>
+<link rel="stylesheet" type="text/css" href=Website5.css >
+
+</head>
+<body>
+<header> 
+<div class="container">
+<h1>Comsci T-shirts</h1>
+
+<nav class="navlinks">
+<ul> 
+<li><a href="HomePage.html" >Home Page</a></li>
+<li><a href="Basket.html" >Shopping Cart</a></li>
+<li><a href="Checkout.html" >Checkout</a></li>
+</ul>
+</nav>
+</div>
+
+
+<div class="banner">
+	<img class="banner-image"  src="img/1.jpg" width="100%" height="block">
+
+</div>
+
+</header>
+<?php
+echo 
+'<html>
+<body>
+Online shop
+</body>
+</html>';
+
+$con = mysqli_connect("csmysql.cs.cf.ac.uk", "c1609359", "watoocnob2", "c1609359");
+
+if(!$con){
+	die("failed to connect:" . mysqli_connect_error());
+}
+
+$query = "SELECT * FROM website"; 
+
+echo "<table border='1'>
+<tr>
+<th>Name</th>
+<th>Information</th>
+<th>Price</th>
+<th>URL</th>
+		
+</tr>";
+
+$result = mysqli_query($con,$query);
+
+
+while($row = mysqli_fetch_assoc($result)) { 
+	echo "<tr>";
+	echo "<td>" . $row['Name'] . "</td>";
+	echo "<td>" . $row['Information'] . "</td>";
+	echo "<td>£" . $row['Price'] . "</td>";
+	echo "<td>' <img src= ".$row['URL'] .  "></td>";
+	echo "</tr>";
+	
+
+}
+
+echo "</table>";
+mysqli_close($con);
+?>
+
+
+<div class="heading">T-shirts</div>
+	<div align="center" class="T-shirts">
+		<div class="T-shirt1">
+		<h1> Feel The Algorith T-shirt</h1>
+		</div>
+	</div>
+</body>
+</html>
