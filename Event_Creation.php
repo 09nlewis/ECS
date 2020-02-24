@@ -292,9 +292,9 @@ if(!$con){
         </div>
         <div class="flax">
           <div class="item">
-            <p>Time of first class</p>
+            <label for="ClassTime"> Time of first class</label>
             <select>
-              <option selected value="" disabled selected></option>
+              <option name="ClassTime" selected value="" disabled selected></option>
               <option value="8A" >8 AM</option>
               <option value="9A">9 AM</option>
               <option value="10A">10 AM</option>
@@ -311,9 +311,9 @@ if(!$con){
             </select>
           </div>
           <div class="item">
-            <p>Select classes the showground would like to run</p>
+            <label for="Classes"> Select classes the showground would like to run</label>
             <select>
-              <option selected value="" disabled selected></option>
+              <option nme="Classes" selected value="" disabled selected></option>
               <option value="8A" >1ft6</option>
               <option value="9A">1ft9</option>
               <option value="10A">2ft</option>
