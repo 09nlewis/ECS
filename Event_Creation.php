@@ -249,28 +249,45 @@ body, html {
       }
     </style>
   </head>
+  <?php
+echo 
+'<html>
+
+</html>';
+
+$con = mysqli_connect("csmysql.cs.cf.ac.uk", "c1609359", "watoocnob2", "c1609359");
+
+if(!$con){
+	die("failed to connect:" . mysqli_connect_error());
+}
+?>
   <body>
     <div class="testbox">
-      <form action="insert.php" method="post">
+      <form action="Submit.php" method="post">
         <div class="item" >
-            <label for="name">Event ID<span>*</span></label>
-            <input id="name" type="text" name="name" required/>
+            <label for="EventID">Event ID<span>*</span></label>
+            <input id="EcentIDInput" type="text" name="EventID" required/>
           </div>
         <div class="item">
-          <label for="name">Showground Name<span>*</span></label>
-          <input id="name" type="text" name="name" required/>
+          <label for="ShowGroundName">Showground Name<span>*</span></label>
+          <input id="ShowGroundNameInput" type="text" name="ShowGroundName" required/>
         </div>
         <div class="item">
-          <label for="email">Showground Address<span>*</span></label>
-          <input id="email" type="email" name="email" required/>
+          <label for="ShowGroundAddress">Showground Address<span>*</span></label>
+          <input id="ShowGroundAddressInput" type="text" name="ShowGroundAddress" required/>
         </div>
         <div class="item">
-          <label for="attendees">Allow team entries<span>*</span></label>
-          <input id="attendess" type="text" name="attendees" required/>
+          <label for="TeamEntries">Allow team entries<span>*</span></label>
+          <input id="TeamEntriesInput" type="text" name="TeamEntries" required/>
         </div>
         <div class="item">
-          <label for="bdate">Set Date of Event<span>*</span></label>
-          <input id="bdate" type="date" name="bdate" required/>
+          <label for="EventDate">Set Date of Event<span>*</span></label>
+          <input id="EventDateInput" type="date" name="EventDate" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="item">
+          <label for="ClosingDate">Set Closing Date for entries<span>*</span></label>
+          <input id="ClosingDateInput" type="date" name="ClosingDate" required/>
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="flax">
@@ -322,37 +339,3 @@ body, html {
     </div>
   </body>
 </html>
-
-<?php
-echo 
-'<html>
-
-</html>';
-
-$con = mysqli_connect("csmysql.cs.cf.ac.uk", "c1609359", "watoocnob2", "c1609359");
-
-if(!$con){
-	die("failed to connect:" . mysqli_connect_error());
-}
-
-$query = "SELECT * FROM website"; 
-$result = mysqli_query($con,$query);
-while($row = mysqli_fetch_assoc($result)) {
-echo	'<div align="center" class="T-shirts">';
-echo		'<div class="T-shirt1">';
-echo			'<div><h1>'. $row['Name'] .'</h1></div>';
-echo				'<img class="image" src="'.$row['URL'].'" />';
-echo					'<p>£' . $row['Price'] . '</p>';
-echo						'<div>'. $row['id'] .'</div>';
-echo						'<div class="Link">'; 
-echo						'<div><h2><a target="_blank"> More Information</a></h2></div>';
-echo								'<div><h1><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /><h1></div>';
-		
-echo		'</div>';
-echo	'</div>';
-echo '</body>';
-echo '</html>';
-}
-
-mysqli_close($con);
-?>
