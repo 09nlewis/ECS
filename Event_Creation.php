@@ -1,341 +1,185 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-<title>Event creation</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-<style>
-body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+	<head>
+		<title>Equestrian Competition Schedular-Create an Event</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-.bgimg {
-  background-position: center; 
-  background-size: cover;
-  background-image: url("https://github.com/09nlewis/ECS/blob/master/Banner.jpeg?raw=true");
-  min-height: 75%;
-}
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Equestrian Competition Schedular</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
 
-.menu {
-  display: none;
-}
-</style>
-<body>
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="elements.html">Elements</a></li>
+					<li><a href="generic.html">Generic</a></li>
+				</ul>
+			</nav>
 
-<!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="Event_Creation.html" class="w3-button w3-block w3-black">EVENT CREATION</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="Competition_Entry.html" class="w3-button w3-block w3-black">COMPETITION ENTRY</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="Shedule.html" class="w3-button w3-block w3-black">SCHEDULE</a>
-    </div>
-  </div>
-</div>
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Create an Event</h1>
+			</div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">Natalie Lewis</span>
-  </div>
-  <div class="w3-display-middle w3-center">
-  </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-  </div>
-</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
 
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
+					<!-- Elements -->
+						<div class="row">
+							<div class="col-6 col-12-medium">
 
-<html>
-  <head>
-    <title>Event Creation</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-      html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, textarea, label, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 34px;
-      color: #fff;
-      z-index: 2;
-      line-height: 83px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 8px  #669999; 
-      }
-      .banner {
-      position: relative;
-      height: 300px;
-      background-image: url("/uploads/media/default/0001/02/50d7a918b0cd14570b3281e08c5ddfb7d299332e.jpeg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.2); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      }
-      input {
-      width: calc(100% - 10px);
-      padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #669999;
-      }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 3px 0  #669999;
-      color: #669999;
-      }
-      .item {
-      position: relative;
-      margin: 10px 0;
-      }
-      .item span {
-      color: red;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color:  #a3c2c2;
-      }
-      .item i {
-      right: 1%;
-      top: 30px;
-      z-index: 1;
-      }
-      [type="date"]::-webkit-calendar-picker-indicator {
-      right: 1%;
-      z-index: 2;
-      opacity: 0;
-      cursor: pointer;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
-      }
-      .question-answer label {
-      display: block;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid  #669999;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 5px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid  #669999;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      .flax {
-      display:flex;
-      justify-content:space-around;
-      }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background:  #669999;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background:  #a3c2c2;
-      }
-      @media (min-width: 568px) {
-      .name-item, .city-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, .name-item div {
-      width: calc(50% - 20px);
-      }
-      .name-item div input {
-      width:97%;}
-      .name-item div label {
-      display:block;
-      padding-bottom:5px;
-      }
-      }
-    </style>
-  </head>
-  <?php
-echo 
-'<html>
+								<!-- Text -->
+									<h3>Create an Event</h3>
+									<p>Use the below form to create an event. For any queries view event organisers FAQ's</p>
+									
 
-</html>';
+								
+								
 
-$con = mysqli_connect("csmysql.cs.cf.ac.uk", "c1609359", "watoocnob2", "c1609359");
+								<!-- Form -->
+									<h3>Form</h3>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="name" id="name" value="" placeholder="Show Ground Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="email" id="email" value="" placeholder="Email" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="name" id="name" value="" placeholder="Show Ground Address" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="email" id="email" value="" placeholder="Postcode" />
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<select name="category" id="category">
+													<option value="">- Date Of competition -</option>
+													<option value="alpha">Option alpha</option>
+													<option value="beta">Option beta</option>
+													<option value="gamma">Option gamma</option>
+													<option value="delta">Option delta</option>
+													<option value="epsilon">Option epsilon</option>
+													<option value="zeta">Option zeta</option>
+													<option value="eta">Option eta</option>
+													<option value="theta">Option theta</option>
+												</select>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<select name="category" id="category">
+													<option value="">-Closing Date for entries-</option>
+													<option value="alpha">Option alpha</option>
+													<option value="beta">Option beta</option>
+													<option value="gamma">Option gamma</option>
+													<option value="delta">Option delta</option>
+													<option value="epsilon">Option epsilon</option>
+													<option value="zeta">Option zeta</option>
+													<option value="eta">Option eta</option>
+													<option value="theta">Option theta</option>
+												</select>
+											</div>
+											<!-- Break -->
+											<div class="col-4 col-12-small">
+												<input type="radio" id="radio-alpha" name="radio" checked>
+												<label for="radio-alpha">Allow Team Entries</label>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="radio" id="radio-beta" name="radio">
+												<label for="radio-beta">No Team entries</label>
+											</div>
+									
+											<!-- Break -->
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="checkbox-alpha" name="checkbox">
+												<label for="checkbox-alpha">Checkbox alpha</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="checkbox-beta" name="checkbox" checked>
+												<label for="checkbox-beta">Checkbox beta</label>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<textarea name="textarea" id="textarea" placeholder="Alpha beta gamma delta" rows="6"></textarea>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Submit Form" class="primary" /></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
 
-if(!$con){
-	die("failed to connect:" . mysqli_connect_error());
-}
-?>
-  <body>
-    <div class="testbox">
-      <form action="Submit.php" method="post">
-        <div class="item" >
-            <label for="EventID">Event ID<span>*</span></label>
-            <input id="EcentIDInput" type="text" name="EventID" required/>
-          </div>
-        <div class="item">
-          <label for="ShowGroundName">Showground Name<span>*</span></label>
-          <input id="ShowGroundNameInput" type="text" name="ShowGroundName" required/>
-        </div>
-        <div class="item">
-          <label for="ShowGroundAddress">Showground Address<span>*</span></label>
-          <input id="ShowGroundAddressInput" type="text" name="ShowGroundAddress" required/>
-        </div>
-        <div class="item">
-          <label for="TeamEntries">Allow team entries<span>*</span></label>
-          <input id="TeamEntriesInput" type="text" name="TeamEntries" required/>
-        </div>
-        <div class="item">
-          <label for="EventDate">Set Date of Event<span>*</span></label>
-          <input id="EventDateInput" type="date" name="EventDate" required/>
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <div class="item">
-          <label for="ClosingDate">Set Closing Date for entries<span>*</span></label>
-          <input id="ClosingDateInput" type="date" name="ClosingDate" required/>
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <div class="flax">
-          <div class="item">
-            <label for="ClassTime"> Time of first class</label>
-            <select>
-              <option name="ClassTime" selected value="" disabled selected></option>
-              <option value="8A" >8 AM</option>
-              <option value="9A">9 AM</option>
-              <option value="10A">10 AM</option>
-              <option value="11A">11 Am</option>
-              <option value="12P">12 Pm</option>
-              <option value="1P">1 Pm</option>
-              <option value="2P">2 Pm</option>
-              <option value="3P">3 Pm</option>
-              <option value="4P">4 Pm</option>
-              <option value="5P">5 Pm</option>
-              <option value="6P">6 Pm</option>
-              <option value="7P">7 Pm</option>
-              <option value="8P">8 Pm</option>
-            </select>
-          </div>
-          <div class="item">
-            <label for="Classes"> Select classes the showground would like to run</label>
-            <select>
-              <option nme="Classes" selected value="" disabled selected></option>
-              <option value="8A" >1ft6</option>
-              <option value="9A">1ft9</option>
-              <option value="10A">2ft</option>
-              <option value="11A">2ft3</option>
-              <option value="12P">2ft6</option>
-              <option value="1P">2ft9</option>
-              <option value="2P">3ft</option>
-              <option value="3P">3ft3</option>
-              <option value="4P">3ft6</option>
-              <option value="5P">3ft9</option>
-            </select>
-          </div>
-        </div>
-        <div class="item">
-          <label for="instructions">Special Instructions</label>
-          <textarea id="instructions" rows="3"></textarea>
-        </div>
-        <p><small>0/100 characters</small></p>
-        <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-        </div>
-      </form>
-    </div>
-  </body>
+								
+
+								
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>Terms and Conditions</h3>
+							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
+						</section>
+						<section>
+							<h4>Helpful Information</h4>
+							<ul class="alt">
+								<li><a href="#">Competitor FAQ's.</a></li>
+								<li><a href="#">Organiser FAQ's.</a></li>
+								<li><a href="#">Contact Us.</a></li>
+								<li><a href="#">Privacy Policy.</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>Find Us On</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
