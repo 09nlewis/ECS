@@ -5,6 +5,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+<<<<<<< HEAD
 	<head>
 		<title>Equestrian Competition Schedular-View Events</title>
 		<meta charset="utf-8" />
@@ -182,4 +183,3 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html>
